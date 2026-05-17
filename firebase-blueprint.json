@@ -1,0 +1,102 @@
+{
+  "entities": {
+    "Project": {
+      "title": "Project",
+      "description": "Portfolio project data",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "role": { "type": "string" },
+        "description": { "type": "string" },
+        "tools": { "type": "array", "items": { "type": "string" } },
+        "year": { "type": "string" },
+        "thumbnail": { "type": "string" },
+        "detailImage": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "isFeatured": { "type": "boolean" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "title", "category", "role", "description", "year", "thumbnail", "tags"]
+    },
+    "SiteConfig": {
+      "title": "Site Configuration",
+      "description": "Global site settings and page content",
+      "type": "object",
+      "properties": {
+        "home": {
+          "type": "object",
+          "properties": {
+            "heroSubtitle": { "type": "string" },
+            "heroTitle": { "type": "string" },
+            "heroDescription": { "type": "string" },
+            "heroImage": { "type": "string" }
+          }
+        },
+        "about": {
+          "type": "object",
+          "properties": {
+            "subtitle": { "type": "string" },
+            "title": { "type": "string" },
+            "description": { "type": "string" }
+          }
+        },
+        "experience": {
+          "type": "object",
+          "properties": {
+            "title": { "type": "string" },
+            "description": { "type": "string" }
+          }
+        }
+      }
+    },
+    "Experience": {
+      "title": "Experience",
+      "description": "Career experience entry",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "period": { "type": "string" },
+        "company": { "type": "string" },
+        "role": { "type": "string" },
+        "projects": { "type": "array", "items": { "type": "string" } },
+        "skills": { "type": "array", "items": { "type": "string" } },
+        "order": { "type": "number" }
+      },
+      "required": ["id", "period", "company", "role", "projects"]
+    },
+    "Message": {
+      "title": "Inquiry Message",
+      "description": "Contact form submission",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "contact": { "type": "string" },
+        "type": { "type": "string" },
+        "content": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "name", "contact", "type", "content", "createdAt"]
+    }
+  },
+  "firestore": {
+    "projects": {
+      "schema": "Project",
+      "description": "Collection of portfolio projects"
+    },
+    "settings": {
+      "schema": "SiteConfig",
+      "description": "Global settings document"
+    },
+    "experiences": {
+      "schema": "Experience",
+      "description": "Collection of career experiences"
+    },
+    "messages": {
+      "schema": "Message",
+      "description": "Collection of contact inquiries"
+    }
+  }
+}

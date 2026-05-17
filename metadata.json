@@ -1,0 +1,8 @@
+{
+  "name": "Remix: 실무형 웹디자이너 포트폴리오",
+  "description": "2004년부터 쇼핑몰 디자인 및 운영 실무를 경험한 실무형 웹디자이너의 포트폴리오 사이트입니다. Firebase를 통한 실시간 관리자 동기화 기능이 포함되어 있습니다.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
