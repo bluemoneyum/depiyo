@@ -48,10 +48,10 @@ export default function Home() {
               <img 
                 src={siteConfig.home.heroImage} 
                 alt="실무형 디자이너 일러스트" 
-                className="w-full h-full object-contain drop-shadow-2xl rounded-2xl"
+                className="w-full h-full object-contain"
               />
             ) : (
-              <div className="w-full aspect-[630/660] bg-neutral-50 rounded-3xl flex items-center justify-center border-2 border-dashed border-neutral-100 italic text-neutral-300">
+              <div className="w-full aspect-[630/660] flex items-center justify-center italic text-neutral-300">
                 Hero Illustration
               </div>
             )}
