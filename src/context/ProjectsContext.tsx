@@ -19,6 +19,16 @@ export interface SiteConfig {
     heroTitle: string;
     heroDescription: string;
     heroImage: string;
+    featuredTitle: string;
+    featuredDescription: string;
+    experienceTitle: string;
+    experienceSubtitle: string;
+    philosophyLabel: string;
+    philosophyTitle: string;
+    philosophyDescription: string;
+    philosophyItems: { label: string; desc: string }[];
+    ctaTitle: string;
+    ctaDescription: string;
   };
   about: {
     subtitle: string;
@@ -81,7 +91,22 @@ const DEFAULT_CONFIG: SiteConfig = {
     heroSubtitle: "실무형 웹디자이너",
     heroTitle: "운영을 이해하는\n준비된 파트너입니다.",
     heroDescription: "단순히 보기 좋은 디자인을 넘어, 실제 쇼핑몰 운영 환경과 비즈니스 성과를 고려한 실무 중심의 디자인 솔루션을 제공합니다.",
-    heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
+    heroImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
+    featuredTitle: "대표 프로젝트",
+    featuredDescription: "실제 운영 환경에서 성과를 낸 주요 작업물입니다.",
+    experienceTitle: "경력 요약",
+    experienceSubtitle: "\"2004년부터 꾸준히 쌓아온 필드 경험은 이론이 아닌 실무 데이터에 근거한 디자인을 가능하게 합니다.\"",
+    philosophyLabel: "PORTFOLIO MINDSET",
+    philosophyTitle: "운영을 아는 디자인은\n다릅니다.",
+    philosophyDescription: "다양한 실무 경험은 저에게 디자인 이상의 관점을 갖게 해주었습니다. 사용자가 어디서 멈추는지, 관리자가 무엇을 어려워하는지 이해하는 디자이너로서 프로젝트에 참여합니다.",
+    philosophyItems: [
+      { label: '디자인', desc: '웹, 상세페이지, 인쇄물' },
+      { label: '운영 경험', desc: '고도몰, 카페24, SCM' },
+      { label: '광고 관리', desc: '네이버 검색광고 운영' },
+      { label: '유지보수', desc: '효율적인 사후 관리' },
+    ],
+    ctaTitle: "비즈니스에 맞는\n디자인을 만듭니다.",
+    ctaDescription: "작업 목적에 맞는 구조와 가독성 중심의 디자인, 지금 시작하세요."
   },
   about: {
     subtitle: "PRAGMATIC DESIGNER",

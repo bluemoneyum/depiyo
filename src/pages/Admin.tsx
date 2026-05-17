@@ -412,6 +412,143 @@ export default function Admin() {
                     className="w-full px-5 py-3 bg-neutral-50 border border-neutral-100 rounded-xl focus:ring-2 focus:ring-black outline-none"
                   />
                 </div>
+
+                <div className="pt-6 border-t border-neutral-50">
+                  <h3 className="font-bold text-neutral-800 mb-4 italic text-sm"># 대표 프로젝트 섹션 (Featured Projects)</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <label className="text-xs font-medium text-neutral-400">제목</label>
+                      <input
+                        type="text"
+                        value={localConfig.home.featuredTitle}
+                        onChange={(e) => setLocalConfig({...localConfig, home: {...localConfig.home, featuredTitle: e.target.value}})}
+                        className="w-full px-4 py-2 bg-neutral-50 border border-neutral-100 rounded-lg focus:ring-2 focus:ring-black outline-none text-sm"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs font-medium text-neutral-400">설명</label>
+                      <input
+                        type="text"
+                        value={localConfig.home.featuredDescription}
+                        onChange={(e) => setLocalConfig({...localConfig, home: {...localConfig.home, featuredDescription: e.target.value}})}
+                        className="w-full px-4 py-2 bg-neutral-50 border border-neutral-100 rounded-lg focus:ring-2 focus:ring-black outline-none text-sm"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-6 border-t border-neutral-50">
+                  <h3 className="font-bold text-neutral-800 mb-4 italic text-sm"># 경력 요약 섹션 (Experience Summary)</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <label className="text-xs font-medium text-neutral-400">제목</label>
+                      <input
+                        type="text"
+                        value={localConfig.home.experienceTitle}
+                        onChange={(e) => setLocalConfig({...localConfig, home: {...localConfig.home, experienceTitle: e.target.value}})}
+                        className="w-full px-4 py-2 bg-neutral-50 border border-neutral-100 rounded-lg focus:ring-2 focus:ring-black outline-none text-sm"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs font-medium text-neutral-400">인용구/설명</label>
+                      <input
+                        type="text"
+                        value={localConfig.home.experienceSubtitle}
+                        onChange={(e) => setLocalConfig({...localConfig, home: {...localConfig.home, experienceSubtitle: e.target.value}})}
+                        className="w-full px-4 py-2 bg-neutral-50 border border-neutral-100 rounded-lg focus:ring-2 focus:ring-black outline-none text-sm"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-6 border-t border-neutral-50">
+                  <h3 className="font-bold text-neutral-800 mb-4 italic text-sm"># 마인드셋 섹션 (Mindset / Philosophy)</h3>
+                  <div className="grid grid-cols-1 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <label className="text-xs font-medium text-neutral-400">상단 레이블</label>
+                        <input
+                          type="text"
+                          value={localConfig.home.philosophyLabel}
+                          onChange={(e) => setLocalConfig({...localConfig, home: {...localConfig.home, philosophyLabel: e.target.value}})}
+                          className="w-full px-4 py-2 bg-neutral-50 border border-neutral-100 rounded-lg focus:ring-2 focus:ring-black outline-none text-sm"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-xs font-medium text-neutral-400">제목 (줄바꿈 \n)</label>
+                        <input
+                          type="text"
+                          value={localConfig.home.philosophyTitle}
+                          onChange={(e) => setLocalConfig({...localConfig, home: {...localConfig.home, philosophyTitle: e.target.value}})}
+                          className="w-full px-4 py-2 bg-neutral-50 border border-neutral-100 rounded-lg focus:ring-2 focus:ring-black outline-none text-sm"
+                        />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs font-medium text-neutral-400">설명</label>
+                      <textarea
+                        rows={2}
+                        value={localConfig.home.philosophyDescription}
+                        onChange={(e) => setLocalConfig({...localConfig, home: {...localConfig.home, philosophyDescription: e.target.value}})}
+                        className="w-full px-4 py-2 bg-neutral-50 border border-neutral-100 rounded-lg focus:ring-2 focus:ring-black outline-none text-sm"
+                      />
+                    </div>
+                    
+                    {/* Grid items */}
+                    <div className="grid grid-cols-2 gap-4 mt-2">
+                      {localConfig.home.philosophyItems.map((item, idx) => (
+                        <div key={idx} className="p-4 bg-neutral-50 rounded-xl border border-neutral-100 space-y-2">
+                          <input
+                            type="text"
+                            placeholder="항목 제목"
+                            value={item.label}
+                            onChange={(e) => {
+                              const newItems = [...localConfig.home.philosophyItems];
+                              newItems[idx].label = e.target.value;
+                              setLocalConfig({...localConfig, home: {...localConfig.home, philosophyItems: newItems}});
+                            }}
+                            className="w-full px-3 py-1 bg-white border border-neutral-100 rounded-lg text-xs font-bold"
+                          />
+                          <input
+                            type="text"
+                            placeholder="항목 설명"
+                            value={item.desc}
+                            onChange={(e) => {
+                              const newItems = [...localConfig.home.philosophyItems];
+                              newItems[idx].desc = e.target.value;
+                              setLocalConfig({...localConfig, home: {...localConfig.home, philosophyItems: newItems}});
+                            }}
+                            className="w-full px-3 py-1 bg-white border border-neutral-100 rounded-lg text-[10px]"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-6 border-t border-neutral-50">
+                  <h3 className="font-bold text-neutral-800 mb-4 italic text-sm"># 하단 호출 섹션 (CTA)</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <label className="text-xs font-medium text-neutral-400">제목 (줄바꿈 \n)</label>
+                      <input
+                        type="text"
+                        value={localConfig.home.ctaTitle}
+                        onChange={(e) => setLocalConfig({...localConfig, home: {...localConfig.home, ctaTitle: e.target.value}})}
+                        className="w-full px-4 py-2 bg-neutral-50 border border-neutral-100 rounded-lg focus:ring-2 focus:ring-black outline-none text-sm"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs font-medium text-neutral-400">설명</label>
+                      <input
+                        type="text"
+                        value={localConfig.home.ctaDescription}
+                        onChange={(e) => setLocalConfig({...localConfig, home: {...localConfig.home, ctaDescription: e.target.value}})}
+                        className="w-full px-4 py-2 bg-neutral-50 border border-neutral-100 rounded-lg focus:ring-2 focus:ring-black outline-none text-sm"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* About Config */}
